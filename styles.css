@@ -1,0 +1,141 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: linear-gradient(120deg, whitesmoke, aliceblue, gray);
+    background-size: 300% 300%;
+    animation: gradientAnimation 10s linear infinite;
+}
+
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+
+
+
+header{
+    background: #000000;
+    color: #ffffff;
+    padding: 20px;
+    font-size: 2rem;
+    padding-left: 30px;
+}
+    
+
+
+.note {
+    text-align: center;
+}
+
+.note-container{
+    background: #3268a9;
+    color: white;
+    padding: 20px;
+    
+}
+
+.note-container h2{
+    color:whitesmoke;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    animation: text 10s linear infinite;
+}
+
+@keyframes text {
+    0% { color:#ffffff; }
+    50% { color:#3c3744; }
+    100% { color:#fbfff1; }
+}
+
+.note-container input {
+    height: 5vh;
+    width: 50vh;
+    border: none;
+    margin-bottom: 20px;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.note-container input:focus{
+    color:#000000;
+    background:silver;
+}
+
+
+
+button{
+    height: 5vh;
+    width: 20vh;
+    background: silver;
+    color:#000;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+button:hover{
+    background:#3c3744;
+    color: #fbfff1;
+}
+
+
+.note button:hover{
+    background: #fff;
+    color: #000;
+} 
+
+
+
+
+
+#note-column p{
+    text-align: left;
+    width: 50%;
+    height:auto;
+    margin-left: 20px;
+    font-size: 1rem;
+    background: #3c3744;
+    color:#fbfff1;
+    padding: 20px;
+    border-radius: 10px;
+    white-space : normal;
+    overflow-wrap: break-word;
+}
+
+p span{
+    color:#fff;
+    width: 45px;
+    height: 45px;
+    font-size: 30px;
+    position: absolute;
+    left: 750px;
+   cursor: pointer;
+}
+
+p span:hover{
+    color:#3268a9;
+}
+
+.link {
+    background: #3c3744;
+    color: #ddd;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.link:hover{
+    background: #ddd;
+    color: #3c3744;
+}
+
+footer{text-align: center;
+    font-size: 1rem;
+    margin-top: 350px;
+}

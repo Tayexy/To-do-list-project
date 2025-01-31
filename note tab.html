@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title>note tab</title>
+        <meta charset utf-8>
+        <meta name="viewport" content="width=device-width", inital scale="1.0">
+        <link rel="stylesheet" href="styleS.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+<body>
+    
+<header>
+    NOTE TAB
+</header>
+
+<div class="note">
+    <div class="note-container">
+    <h2>what's happening today?</h2>
+    <input type="text" id="input-tab" placeholder="type in your task">
+    <button onclick="addnote()">Add Note</button>
+    <p><a href="To do list.html" class="link">Add Task</a></p>
+    </div>
+
+
+    <div id="note-column">
+        
+    </div>
+</div>
+
+
+
+    <footer>
+      <p>Help The Developer By Dropping Your Review at(dgotgraphics@gmail.com)</p>
+    </footer>
+
+<script>
+
+
+
+
+
+
+
+const inputTab = document.getElementById("input-tab");
+const noteColumn = document.getElementById("note-column");
+
+function addnote() {
+    if (inputTab.value === '') {
+        alert("You must input a text");
+    } else {
+        let p = document.createElement("p");
+        p.innerHTML = inputTab.value;
+
+        let span = document.createElement("span");
+        span.innerHTML = "\u00d7";
+        span.onclick = function () {
+            p.remove();
+            keepData();
+        };
+
+        p.appendChild(span);
+        noteColumn.appendChild(p);
+
+        inputTab.value = "";
+        keepData();
+    }
+}
+
+function keepData() {
+    localStorage.setItem("noteData", noteColumn.innerHTML);
+}
+
+function loadNotes() {
+    noteColumn.innerHTML = localStorage.getItem("noteData") || "";
+    // Reattach event listeners for the span elements
+    Array.from(noteColumn.querySelectorAll("p span")).forEach(span => {
+        span.onclick = function () {
+            span.parentElement.remove();
+            keepData();
+        };
+    });
+}
+
+// Load notes when the page loads
+window.onload = loadNotes;
+
+</script>
+</body>
+
+</html>
